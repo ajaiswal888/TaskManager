@@ -1,0 +1,42 @@
+%h1 Task Manager 2.0
+=form_for @manager do |f|
+	=f.label :task
+	=f.text_field :task
+	=f.label :due_date
+	=f.datetime_select("due_date")
+	=f.label :priority
+	=f.select(:priority, [['!',1],['!!',2],['!!!',3]])
+	=f.submit ('Create Task')
+%h3 Today
+%table
+	%tr
+		%th.firstRow Task
+		%th Time
+		%th Priority
+	-Manager.today.each do |wat|
+		%tr
+			%td= wat.task
+			%td= wat.due_date.to_s(:time)
+			%td= wat.format_priority
+%h3 Tomorrow
+%table
+	%tr
+		%th.firstRow Task
+		%th Time
+		%th Priority
+	-Manager.tomorrow.each do |wat|
+		%tr
+			%td= wat.task
+			%td= wat.due_date.to_s(:time)
+			%td= wat.format_priority
+%h3 Beyond
+%table
+	%tr
+		%th.firstRow Task
+		%th Date
+		%th Priority
+	-Manager.beyond.each do |wat|
+		%tr
+			%td= wat.task
+			%td= wat.due_date.to_date.to_formatted_s(:short)
+			%td= wat.format_priority

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe PlannersController, :type => :controller do
+RSpec.describe ManagersController, :type => :controller do
 
   describe "GET index" do
     it "returns http success" do

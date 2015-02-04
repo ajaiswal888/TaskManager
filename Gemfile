@@ -26,6 +26,8 @@ group :test, :development do
 	gem 'guard-rspec'
 	gem 'libnotify'
 	gem 'launchy'
+	gem 'capybara'
+	gem 'byebug'
 end
 
 gem 'jquery-rails'

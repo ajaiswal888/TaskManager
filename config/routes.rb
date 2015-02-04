@@ -1,7 +1,7 @@
 Planner::Application.routes.draw do
-  get "planners/index"
-  root :to => 'Planners#index'
-  resources :planners
+  get "managers/index"
+  root :to => 'Managers#index'
+  resources :managers
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
